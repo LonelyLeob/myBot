@@ -1,8 +1,8 @@
 import requests
 from string import capwords as cp
+from tokens import APPID
 
 URL_BASE = 'https://api.openweathermap.org/data/2.5/'
-APPID = '035537dba5eccef48bd7df7e5947cd1c'
 
 def get_weather(lat: float=54.5293, lon: float=36.2724, appid: str=APPID, lang: str='ru') -> dict:
     return requests.get(URL_BASE + 'weather', params=locals()).json()
